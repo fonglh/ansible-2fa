@@ -4,7 +4,7 @@
   connection: local
   tasks:
     - include_vars: keys.yml
-    - command: echo "{{ keys[service] }}"
+    - command: go-totp "{{ keys[service] }}"
       register: twofa
     - debug: var=twofa.stdout
 
